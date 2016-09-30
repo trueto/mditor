@@ -1,4 +1,3 @@
-var $ = require('jquery');
 var Parser = require('../lib/parser');
 var Toolbar = require('./toolbar');
 var Editor = require('./editor');
@@ -73,6 +72,10 @@ Mditor.prototype.setOptions = function (options) {
 	if (options.width !== null) {
 		self.options.width = options.width;
 		self.setWidth(self.options.width);
+	}
+	//处理图片参数
+	if (options.picture !== null) {
+		self.options.picture = options.picture;
 	}
 };
 

@@ -181,7 +181,39 @@ Toolbar.prototype.items = {
 	"image": {
 		"title": "图片",
 		"handler": function (event) {
-			this.editor.wrapSelectText("![alt](", ")");
+			//创建不可见的文件上传框
+			var input = document.createElement('input');
+			input.type ="file";
+			input.accept = "image/*";
+			input.multiple = "multiple";
+			input.style.display="none";
+			document.body.appendChild(input);
+			var that =this;
+			input.click();
+			//选择图片
+			input.addEventListener('change', function () {
+						//类数组元数转换为数组
+						var arr = Array.from(this.files);
+						arr.map(function(file){lrz(file,that.options.picture)
+			        .then(function (rst) {
+			            // 处理成功会执行
+									$.ajax({
+										url:that.options.picture.url,
+					          type:'post',
+					          dataType:'json',
+										data:rst.formData,
+					          processData: false,
+					          contentType: false,
+					          success:function(data) {
+											that.editor.wrapSelectText("![alt]("+data.imgurl+")");
+										}
+									});
+			        })
+			        .catch(function (err) {
+			            // 处理失败会执行
+									alert(err);
+			        })});
+			});
 			return this;
 		},
 		"key": "shift+alt+p"

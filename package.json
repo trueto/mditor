@@ -1,6 +1,6 @@
 {
   "name": "mditor",
-  "version": "0.1.4",
+  "version": "0.0.1",
   "description": "一个简洁、易于集成、方便扩展、期望舒服的编写 markdown 的编辑器",
   "main": "./lib/index.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/houfeng/mditor.git"
+    "url": "git+https://github.com/trueto/mditor"
   },
   "keywords": [
     "mditor",
@@ -17,20 +17,19 @@
     "editor"
   ],
   "author": {
-    "name": "Houfeng",
-    "email": "admin@xhou.net",
-    "url": "http://houfeng.net"
+    "name": "trueto",
+    "email": "1509359472@qq.com",
+    "url": "https://github.com/trueto/"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/houfeng/mditor/issues"
+    "url": "https://github.com/trueto/mditor/issues"
   },
-  "homepage": "http://houfeng.net/mditor",
+  "homepage": "https://github.com/trueto/mditor",
   "dependencies": {
     "font-awesome": "^4.4.0",
     "github-markdown-css": "^2.0.10",
     "highlight.js": "^8.8.0",
-    "jquery": "^2.1.4",
     "keymaster": "^1.6.2",
     "marked": "^0.3.5",
     "xss": "^0.2.7"
